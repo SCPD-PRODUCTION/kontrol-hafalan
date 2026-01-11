@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontrol Hafalan Siswa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jsPDF LOCAL -->
+  <script src="lib/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+  SISTEM KONTROL HAFALAN SISWA
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Tambah Siswa</h2>
+    <input id="namaSiswa" placeholder="Nama Siswa">
+    <select id="kelas">
+      <option value="Wustho">Wustho (Iqro)</option>
+      <option value="Ulya">Ulya (Al-Qur'an)</option>
+    </select>
+    <button onclick="tambahSiswa()">Simpan Siswa</button>
+  </div>
+
+  <div class="card">
+    <h2>Input Setoran</h2>
+    <select id="pilihSiswa"></select>
+    <select id="jenisSetoran">
+      <option value="quran">Al-Qur'an</option>
+      <option value="iqro">Iqro</option>
+      <option value="hadist">Hadist</option>
+    </select>
+    <input id="materi" placeholder="Surat / Juz / Iqro / Hadist">
+    <textarea id="catatan" placeholder="Catatan kesalahan pelafalan"></textarea>
+    <button onclick="tambahSetoran()">Simpan Setoran</button>
+  </div>
+
+  <div class="card">
+    <h2>Data Hafalan</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Siswa</th>
+          <th>Jenis</th>
+          <th>Materi</th>
+          <th>Catatan</th>
+        </tr>
+      </thead>
+      <tbody id="tabelSetoran"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Export PDF</h2>
+    <button onclick="exportPDF()">Generate PDF</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
